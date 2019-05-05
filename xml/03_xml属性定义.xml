@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--一个标签上可以有多个属性，但是属性名称不能相同-->
+<!-- 注释不能有嵌套 -->
+
+<!--xml的特殊字符,需要进行转义-->
+<special>
+    <xy>a&lt;b</xy>
+    <dy>a&gt;b</dy>
+    <and>a&amp;b</and>
+</special>

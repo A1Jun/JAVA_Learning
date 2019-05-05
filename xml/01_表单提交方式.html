@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--使用button提交-->
+    <!--创建form标签-->
+    <form id="form1">
+        <input type="text" name="username"/><br/>
+        <input type="submit" value="提交" onclick="form1();"/>
+    </form>
+
+    <!--通过超链接提交-->
+    <a href="hello.html?username=12345" >点击我来提交</a><hr/>
+
+    <!--得到失去焦点的实现-->
+    <input type="text" id="test" value="please click" onfocus="focus1();" onblur="blur1();"/>
+
+</body>
+<script type="text/javascript">
+
+    function focus1(){
+        //得到test
+        var test = document.getElementById("test");
+        test.value = "";
+    }
+
+    function blur1(){
+        var test = document.getElementById("test");
+        test.value = "please click";
+    }
+
+    function form1(){
+        // 获取form，设置action，提交form表单
+        var form = document.getElementById("form1");
+        form.action = "hello.html";
+        form.submit();
+    }
+</script>
+</html>
+

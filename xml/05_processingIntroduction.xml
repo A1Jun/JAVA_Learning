@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="1.css"?>
+
+<!--通过PI指令引入样式标签 (对中文标签不起作用)-->
+<!--不常用-->
+<person>
+    <name>zhangsan</name>
+    <age>20</age>
+</person>
