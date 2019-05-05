@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    // 获取当前时间
+        var date = new Date();
+        document.write(date.toLocaleString());
+        document.write("<hr />");
+        
+        // 获取年份
+        document.write("year: "+ date.getFullYear());
+        
+        //获取当前月,返回0-11月。
+        document.write("<hr/>");
+        document.write("month: " + (date.getMonth()+1));
+        
+        //获取当前是一周中的第几天，外国星期日为第一天
+        document.write("<br/>" + "week :" + date.getDay());
+        
+        //获取当前的日
+        document.write("<br/>" + "day :" + date.getDate() );
+       
+        //获取当前的小时
+        document.write("<br/>" + "hour :" + date.getHours());
+        
+        //得到当前的分钟,秒
+        date.getMinutes();
+        date.getSeconds();
+
+        //获取毫秒数 获得的是1970 1 1至今的毫秒数
+        //应用场景：使用毫秒数处理缓存的效果（不有缓存）
+        date.getTime();
+
+
+
+        
+    </script> 
+</body>
+</html>

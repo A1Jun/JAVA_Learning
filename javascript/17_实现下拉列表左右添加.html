@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--
+        1.创建几个div模块
+    -->
+</head>
+<body>
+    <div id="s1" style="float:left">
+        <div>
+            <select id="select1" multiple="multiple" style="width:100px;height:160px;">
+                <option value="1">选项1</option>
+                <option value="2">选项2</option>
+                <option value="3">选项3</option>
+                <option value="4">选项4</option>
+                <option value="5">选项5</option>
+                <option value="6">选项6</option>
+                <option value="7">选项7</option>
+            </select>
+        </div>
+        <div>
+            <input type="button" value="选中添加到右边&gt;&gt;" onclick="selToRight();"/><br/>
+            <input type="button" value="全部添加到右边&gt;&gt;" onclick="allToRight();"/>
+        </div>
+    </div>
+
+    <div id="s2">
+        <div>
+            <select id="select2" multiple="multiple" style="width:100px;height:160px;">
+                <option value="8">选项8</option>
+            </select>
+        </div>
+        <div>
+            <input type="button" value="&lt;&lt;选中删除到左边" onclick="selToLeft();"/><br/>
+            <input type="button" value="&lt;&lt;全部删除到左边" onclick="allToLeft();"/>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+    var select1 = document.getElementById("select1");
+    var select2 = document.getElementById("select2");
+
+    function allToLeft(){
+        var option = select2.getElementsByTagName("option");
+        for (var i=0; i<option.length; i++){
+            var op4 = option[i];
+            select1.appendChild(op4);
+            i--;
+        }
+    }
+    
+    /*
+        把右边的选中条目添加到左边
+        
+    */
+    function selToLeft(){
+        var option = select2.getElementsByTagName("option");
+        for (var i=0; i<option.length; i++){
+            var op3 = option[i];
+            if (op3.selected == true){
+                select1.appendChild(op3);
+                i--;
+            }
+        }
+    }
+    /*
+    
+        把左边的选中条目都添加到右边的选择框中
+    */
+    function allToRight(){
+        // 先获取select1,select2
+        // 获取所有option并添加到select2中
+        var option = select1.getElementsByTagName("option");
+        for (var i=0; i<option.length; i++){
+            var op2 = option[i];
+            select2.appendChild(op2);
+            // 因为数组是变化的，所以i需要保持在0的位置
+            i--;
+        }
+    }
+    
+    /* 选中左边的的数据的条目，把选中的添加到右边的选择框中
+        select标签的属性：selected可以判断是否被选中
+        先获取option的所有标签，循环遍历，判断哪一个被选中
+        添加到select2标签下
+    */
+    function selToRight(){
+        // 获取select1,select2
+        var s1 = document.getElementById("select1");
+        var s2 = document.getElementById("select2");
+        var op = s1.getElementsByTagName("option");
+
+        // 遍历每个option，把selected=true状态下的放到select2标签中
+        for (var i=0; i<op.length; i++){
+            var op1 = op[i]
+            if(op1.selected == true){
+                s2.appendChild(op1);
+                i--;
+            }
+        }
+    }
+</script>
+
+</html>

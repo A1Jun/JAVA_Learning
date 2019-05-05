@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--首先创建一个按钮，两个输入框-->
+    行：<input type="text" id="row" />
+    列：<input type="text" id="col" /> <br/>
+    <input type="button" value="生成表格" onclick="add1();"/>
+
+    <div id="div1"></div>
+
+</body>
+<script type="text/javascript">
+    /*
+        需要获取到输入框中的值，并且生成相对应的表格
+        把生成的表格放到div标签中
+    */
+
+    function add1(){
+        var row = document.getElementById("row").value;
+        var cal = document.getElementById("col").value;    
+
+        // 把表格代码放到一个变量里
+        var tab = "<table border='1' bordercolor='blue'>";
+        // 循环行
+        for (var h=0; h<row; h++){
+            tab+="<tr>";
+            // 循环列
+            for (var l=0; l<cal; l++){
+                tab+="<td>我是新的表格</td>";
+            }
+            tab+="</tr>"
+        }
+        
+        tab += "</table>";
+        // 设置文本内容
+        var div = document.getElementById("div1");
+        div.innerHTML = tab;
+    }
+
+</script>
+</html>

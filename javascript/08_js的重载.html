@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    // 面试题目 js中是否存在重载
+        // 1. js不存在重载，调用最后一个方法。2. 但是可以通过其他方式模拟重载的效果
+        // 3. js函数里都有一个数组arguments，可以通过它来实现
+
+        function add1(a, b){
+            arguments //把传递的参数存储到这里
+            return a+b;
+        }
+        function add1(a, b, c){
+            return a+b+c;
+        }
+        function add1(a, b, c, d){
+            return a+b+c+d;
+        }
+
+        alert(add1(1,2)); //NaN
+        alert(add1(1,2,3)); // NaN
+        alert(add1(1,2,3,4)); // 10
+
+    </script>
+</body>
+</html>

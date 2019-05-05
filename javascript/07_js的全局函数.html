@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    // 由于全局函数不属于任何一个对象，直接写名称使用
+        //eval方法，执行js代码，如果字符串是一个js代码。使用方法直接执行
+        var s = "alert('1234')";
+        // eval(s);
+
+        // encodeURI(对字符进行编码) 和 decodeURI(对字符进行解码)
+        document.write("<hr/>");
+        var m = "测试中文aa11";
+        document.write(encodeURI(m)); //%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%96%87aa11
+
+        // encodeURIComponent 和 decodeURIComponent
+
+        // isNaN() 检查当前字符串是否是数字 返回true,false
+        // NaN(Not a Number) 非数
+        var str = "123";
+        alert(isNaN(str));
+
+        // parseInt():类型转换，解析一个字符串并返回一个整数
+        // parseFloat()
+        
+
+    </script>
+</body>
+</html>

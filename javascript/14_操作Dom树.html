@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        在节点前面插入一个节点
+        // 首先获取要被插入的标签
+        创建节点，创建文本
+        把文本添加到节点下，再把节点添加到父节点下面
+    -->
+    <ul id="ulid">
+        <li id="1">王昭君</li>
+        <li id="3">貂蝉</li>
+    </ul>
+
+    <input type="button" value="insert" onclick="insert1()"/>
+    <script type="text/javascript">
+        function insert1(){
+            var li3 = document.getElementById("3");
+            var li2 = document.createElement("li");
+            var text1 = document.createTextNode("李兰迪");
+            li2.appendChild(text1);
+            var ul1 = document.getElementById("ulid");
+            ul1.insertBefore(li2,li3);
+        }
+    </script>
+</body>
+</html>

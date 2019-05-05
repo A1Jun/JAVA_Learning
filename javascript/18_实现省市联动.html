@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select id="province" onchange="add1(this.value);">
+        <option>请选择</option>
+        <option>吉林</option>
+        <option>辽宁</option>
+        <option>黑龙江</option>
+        <option>山西</option>
+    </select>
+
+    <select id="city">
+        
+    </select>
+</body>
+<script type="text/javascript">
+    // 创建一个数组存储数据
+    var arr = new Array(4);
+    arr[0] = ["吉林","长春","吉林","四平","通化","松原","双辽","延吉"];
+    arr[1] = ["辽宁", "沈阳","大连","旅顺","盘锦","锦州","葫芦岛"];
+    arr[2] = ["黑龙江","大庆","哈尔滨","鹤岗","齐齐哈尔"];
+    arr[3] = ["山西","大同","太原","忻州","吕梁",];
+
+    // 把数组和下拉列表结合起来
+    function add1(province){
+        /*
+            遍历二维数组，得到第一个值与传递的值比较然后对应数组
+            从对应的数组中获取值，获取city的select 
+            把值添加到获取到的city中
+            需要先创建option标签，先创建标签，把值加入到标签中，在把option标签添加到city中
+        */
+
+        // 由于每次都想要city里面添加option, 不能追加数据。
+        // 所以每次添加之前，判断一下city里面有没有option
+
+        var city = document.getElementById("city");
+        var option = city.getElementsByTagName("option");
+        for(var m=0; m<option.length; m++){
+            // 删除子节点
+            city.removeChild(option[m]);
+            m--;
+        }
+        for(var i=0; i<arr.length; i++){
+            if(arr[i][0]==province){
+                // 得到第一个值后面的元素
+                for(var j=1; j<arr[i].length; j++){
+                    var option = document.createElement("option");
+                    // 创建文本节点
+                    var text = document.createTextNode(arr[i][j]);
+                    option.appendChild(text);
+                    city.appendChild(option);
+                }
+            }
+        }
+
+    }
+</script>
+</html>

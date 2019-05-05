@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        先写4个复选框,2个按钮
+
+        实现其中的功能
+    -->
+    <input type="checkbox" id="boxid" onclick="setAllNo();"/>全选/全不选<br/> 
+    <input type="checkbox" name="love"/>篮球
+    <input type="checkbox" name="love"/>排球
+    <input type="checkbox" name="love"/>羽毛球
+    <input type="checkbox" name="love"/>乒乓球 <br/>
+    <input type="button" value="全选" onclick="selAll();"/>
+    <input type="button" value="全不选" onclick="selNo();"/>
+    <input type="button" value="反选" onclick="setOther();"/>
+    
+    <script type="text/javascript">
+        // 实现全选的功能
+        function selAll(){
+            var all = document.getElementsByName("love");
+            for (var i=0; i<all.length; i++){
+                all[i].checked = true;
+            }
+        }
+
+        function selNo(){
+            var all = document.getElementsByName("love");
+            for (var i=0; i<all.length; i++){
+                all[i].checked = false;
+            }
+        }
+
+        function setOther(){
+            var all = document.getElementsByName("love");
+            for (var i=0; i<all.length; i++){
+                if(all[i].checked == true){
+                    all[i].checked = false;
+                }else{
+                    all[i].checked = true;
+                }
+            }
+        }
+
+        function setAllNo(){
+            var box = document.getElementById("boxid");
+            if(box.checked==true){
+                selAll();
+            }else{
+                selNo();
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ulid"><li id="lia">111</li><li id="lib">222</li><li id="lic">333</li><li id="lid">444</li></ul>
+
+    <script type="text/javascript">
+        // var li1 = document.getElementById("li1");
+        // var ul1 = li1.parentNode;
+        // alert(ul1.id);
+
+        // 获取ul的第一个子节点
+        var ul1 = document.getElementById("ulid");
+        var li1 = ul1.firstChild;
+        alert(li1.id);
+
+        // 获取最后一个子节点
+        // var li4 = ul1.lastChild;
+        // document.write(li4.id);
+
+        // document.write(li4.previousSibling.id);
+
+        var lib = document.getElementById("lib");
+        var next = lib.nextSibling.id;
+        document.write(next);
+        
+    </script>
+</body>
+</html>
